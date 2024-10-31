@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WinOs-clone/static/css/main.37fca6d8.css",
+    "main.js": "/WinOs-clone/static/js/main.7d473156.js",
+    "index.html": "/WinOs-clone/index.html",
+    "main.37fca6d8.css.map": "/WinOs-clone/static/css/main.37fca6d8.css.map",
+    "main.7d473156.js.map": "/WinOs-clone/static/js/main.7d473156.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37fca6d8.css",
+    "static/js/main.7d473156.js"
+  ]
+}
