@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AppsInfo from './appsData';
 
 function App(props) {
     const increment = 90;
@@ -46,7 +47,7 @@ function App(props) {
 
     return (
         <main
-            className="select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center shadow-2xl w-16 pt-2"
+            className=" select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center shadow-2xl w-16 pt-4"
             style={{ left: `${currentWidth + 10}px`, top: `${currentHeight}px` }}
             onMouseDown={handleMouseDown}
         >
@@ -60,4 +61,16 @@ function App(props) {
     );
 }
 
-export default App;
+function FinalApp() {
+    return (
+        <>
+            <div className=" relative">
+                {AppsInfo.map((item, index) => (
+                    <App key={index} name={item.name} img={item.img} index={index} />
+                ))}
+            </div>
+        </>
+    );
+}
+
+export default FinalApp

@@ -1,57 +1,42 @@
-function urlImg(){
-    return `https://raw.githubusercontent.com/GIGIsOtherStuff/GIGIOSmedia/main/Files/defDesk.jpg`
+function urlImg(name){
+    return `https://raw.githubusercontent.com/GIGIsOtherStuff/WinOSmedia/main/Files/deskAppIcons/${name}.png`
 }
 
 const AppsInfo = [
     {
         id: 1,
         name: 'Calculator',
-        img: urlImg()
+        img: urlImg('calculator')
     },
     {
         id: 2,
-        name: 'Bomb',
-        img: urlImg()
+        name: 'Chrome',
+        img: urlImg('chrome')
     },
     {
         id: 3,
-        name: 'Calculator',
-        img: urlImg()
+        name: 'Folder',
+        img: urlImg('blankFolder')
     },
     {
         id: 4,
-        name: 'Bomb',
-        img: urlImg()
+        name: 'Spotify',
+        img: urlImg('spotify')
     },
     {
-        id: 1,
-        name: 'Calculator',
-        img: urlImg()
+        id: 5,
+        name: 'Notepad',
+        img: urlImg('note')
     },
     {
-        id: 2,
-        name: 'Bomb',
-        img: urlImg()
+        id: 6,
+        name: 'Settings',
+        img: urlImg('settings')
     },
     {
-        id: 3,
-        name: 'Calculator',
-        img: urlImg()
-    },
-    {
-        id: 4,
-        name: 'Bomb',
-        img: urlImg()
-    },
-    {
-        id: 3,
-        name: 'Calculator',
-        img: urlImg()
-    },
-    {
-        id: 4,
-        name: 'Bomb',
-        img: urlImg()
+        id: 7,
+        name: 'Recycle bin',
+        img: urlImg('trash')
     }
 ]
 
