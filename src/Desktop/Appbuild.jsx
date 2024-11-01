@@ -47,17 +47,19 @@ function App(props) {
 
     return (
         <main
-            className=" select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center shadow-2xl w-16 pt-4"
-            style={{ left: `${currentWidth + 10}px`, top: `${currentHeight}px` }}
-            onMouseDown={handleMouseDown}
-        >
-            <div
-                className="mx-auto w-12 h-12 rounded-lg text-center bg-cover"
-                style={{ backgroundImage: `url(${props.img})` }}
-                alt={props.name}
-            />
-            <span className="shadow-3xl">{props.name}</span>
-        </main>
+        className=" select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center shadow-2xl w-16 pt-4"
+        style={{ left: `${currentWidth + 10}px`, top: `${currentHeight}px` }}
+        onMouseDown={handleMouseDown}
+    >
+        <abbr className='no-underline' title={props.name}>
+        <div
+            className="mx-auto w-12 h-12 rounded-lg text-center bg-cover"
+            style={{ backgroundImage: `url(${props.img})` }}
+            alt={props.name}
+        />
+        <span className="shadow-3xl">{props.name}</span>
+        </abbr>
+    </main>
     );
 }
 

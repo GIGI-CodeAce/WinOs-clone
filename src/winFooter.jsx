@@ -8,6 +8,20 @@ function Footer() {
         setAsideBar(!asideBar);
     }
 
+function getCurrentEuropeanTime() {
+    const now = new Date();
+    const offset = 1;
+
+    const localTime = new Date(now.getTime() + (offset * 60 * 60 * 1000));
+
+    const hours = String(localTime.getHours()).padStart(2, '0' -1);
+    const minutes = String(localTime.getMinutes()).padStart(2, '0');
+    const seconds = String(localTime.getSeconds()).padStart(2, '0');
+
+    return `${hours}:${minutes}:${seconds}`;
+}
+const europeanTime = getCurrentEuropeanTime();
+
     return (
         <footer className="z-20 select-none cursor-pointer flex items-center w-full h-[50px] absolute text-gray-400 bottom-0 bg-gray-400/30 backdrop-blur-md">
             <Search asideBar={asideBar} setAsideBar={setAsideBar}/>
@@ -29,7 +43,7 @@ function Footer() {
             <div className="flex absolute right-16 items-center">
                 <span className="material-symbols-outlined">wifivolume_upbattery_5_bar</span>
             </div>
-            <div className="flex absolute right-2 items-center">8:09:32</div>
+            <div className="flex absolute right-2 items-center">{europeanTime}</div>
         </footer>
     );
 }
