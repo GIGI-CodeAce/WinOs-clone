@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import AppsInfo from './appsData';
+import React from 'react';
+import AppsInfo from './appsData'; 
 
-function App(props) {
+function App({ name, img, index, openApp }) {
     const increment = 90;
+    const [currentHeight, setCurrentHeight] = React.useState(0);
+    const [currentWidth, setCurrentWidth] = React.useState(0);
+    const [isDragging, setIsDragging] = React.useState(false);
+    const [offsetX, setOffsetX] = React.useState(0);
+    const [offsetY, setOffsetY] = React.useState(0);
 
-    const [currentHeight, setCurrentHeight] = useState(0);
-    const [currentWidth, setCurrentWidth] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const [offsetX, setOffsetX] = useState(0);
-    const [offsetY, setOffsetY] = useState(0);
-
-    useEffect(() => {
-        const newHeight = (props.index % 8) * increment;
-        const newWidth = Math.floor(props.index / 8) * increment;
+    React.useEffect(() => {
+        const newHeight = (index % 8) * increment;
+        const newWidth = Math.floor(index / 8) * increment;
 
         setCurrentHeight(newHeight);
         setCurrentWidth(newWidth);
-    }, [props.index]);
+    }, [index]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
@@ -35,7 +34,7 @@ function App(props) {
         setIsDragging(false);
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
 
@@ -47,32 +46,31 @@ function App(props) {
 
     return (
         <main
-        className=" select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center shadow-2xl w-16 pt-4"
-        style={{ left: `${currentWidth + 10}px`, top: `${currentHeight}px` }}
-        onMouseDown={handleMouseDown}
-    >
-        <abbr className='no-underline' title={props.name}>
-        <div
-            className="mx-auto w-12 h-12 rounded-lg text-center bg-cover"
-            style={{ backgroundImage: `url(${props.img})` }}
-            alt={props.name}
-        />
-        <span className="shadow-3xl">{props.name}</span>
-        </abbr>
-    </main>
+            className="select-none hover:bg-white hover:bg-opacity-10 rounded-xl absolute cursor-pointer text-white text-sm text-center min-h-[85px] shadow-2xl w-16 mt-4 pt-2"
+            style={{ left: `${currentWidth + 10}px`, top: `${currentHeight}px` }}
+            onMouseDown={handleMouseDown}
+            onDoubleClick={() => openApp(name)}
+        >
+            <abbr className='no-underline' title={name}>
+                <div
+                    className="mx-auto w-12 h-12 rounded-lg text-center bg-cover"
+                    style={{ backgroundImage: `url(${img})` }}
+                    alt={name}
+                />
+                <span className="shadow-3xl">{name}</span>
+            </abbr>
+        </main>
     );
 }
 
-function FinalApp() {
+function FinalApp({ openApp }) {
     return (
-        <>
-            <div className=" relative">
-                {AppsInfo.map((item, index) => (
-                    <App key={index} name={item.name} img={item.img} index={index} />
-                ))}
-            </div>
-        </>
+        <div className="relative">
+            {AppsInfo.map((item, index) => (
+                <App key={index} name={item.name} img={item.img} index={index} openApp={openApp} /> // Pass openApp to each App
+            ))}
+        </div>
     );
 }
 
-export default FinalApp
+export default FinalApp;

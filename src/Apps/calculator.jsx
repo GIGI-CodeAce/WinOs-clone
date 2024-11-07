@@ -52,7 +52,7 @@ function Calculator() {
     return (
         isShowing && (
             <Draggable onClose={Close}>
-                <main className="w-[350px] h-[469px] bg-black rounded-b-xl">
+                <main className="w-[350px] h-[469px] bg-black rounded-b-x">
                 <input
                         className="text-black text-center text-2xl w-[335px] rounded-xl p-2 m-2"
                         value={inputVal}
