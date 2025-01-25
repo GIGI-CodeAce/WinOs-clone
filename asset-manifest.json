@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/WinOs-clone/static/css/main.37fca6d8.css",
-    "main.js": "/WinOs-clone/static/js/main.7d473156.js",
+    "main.css": "/WinOs-clone/static/css/main.4a3ab1e0.css",
+    "main.js": "/WinOs-clone/static/js/main.2a21552f.js",
     "index.html": "/WinOs-clone/index.html",
-    "main.37fca6d8.css.map": "/WinOs-clone/static/css/main.37fca6d8.css.map",
-    "main.7d473156.js.map": "/WinOs-clone/static/js/main.7d473156.js.map"
+    "main.4a3ab1e0.css.map": "/WinOs-clone/static/css/main.4a3ab1e0.css.map",
+    "main.2a21552f.js.map": "/WinOs-clone/static/js/main.2a21552f.js.map"
   },
   "entrypoints": [
-    "static/css/main.37fca6d8.css",
-    "static/js/main.7d473156.js"
+    "static/css/main.4a3ab1e0.css",
+    "static/js/main.2a21552f.js"
   ]
 }
